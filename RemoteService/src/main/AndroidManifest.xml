@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xingen.remoteservice">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <!-- 注册远程服务  客户端服务端在同个App中，android:process=":remote"，
+                           代表在应用程序里，当需要该service时，会自动创建新的进程。
+                           而如果是android:process="remote"，没有“:”分号的，
+                           则创建全局进程，不同的应用程序共享该进程-->
+        <service android:name=".service.CommonRemoteService"
+            android:process=":remote"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.xingen.remoteservice.service.CommonRemoteService"></action>
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>
