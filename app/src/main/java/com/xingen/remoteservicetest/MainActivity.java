@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onDestroy() {
         super.onDestroy();
         //解除远程绑定
-        unBindRomoteService();
+        unBindRemoteService();
     }
 
     private void initView() {
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     /**
      * 解除远程服务的绑定
      */
-    private void unBindRomoteService() {
+    private void unBindRemoteService() {
         unbindService(serviceConnection);
     }
 
